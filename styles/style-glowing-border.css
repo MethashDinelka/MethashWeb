@@ -1,0 +1,137 @@
+*{
+  margin: 0;
+  padding: 0;  
+}
+html{
+  font-family: Poppins;
+  color: #f0f0f0;
+}
+
+body {
+  background-color: #000000;
+}
+
+header {
+  background-color: #e5fcdf;
+  color: black;
+  text-align: center;
+  padding: 2rem;
+  user-select: none;
+}
+
+p {
+  font-size: xx-large;
+  user-select: none;
+}
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.github {
+  background: #000000;
+  color: white;
+}
+
+.instagram {
+  background: #fa7b04;
+  color: white;
+}
+
+.whatsapp {
+  background: #1eb500;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+img {
+  border-radius: 100%;
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  border: 2px solid #f7f8f8;
+}
+
+h1{
+  color: black;
+  font-size: 5vw;
+  user-select: none;
+}
+
+h2 {
+  font-size: 2vw;
+  user-select: none;
+  font-weight: 700;
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(215, 253, 0);
+  color: rgb(0, 0, 0);
+}
+.card{
+  margin: 0 auto;
+  padding: 2em;
+  width: 700px;
+  background: #1c1f2b;
+  text-align: center;
+  border-radius: 40px;
+  position: relative;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #54ff05, #006aff, #eafa0d, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
