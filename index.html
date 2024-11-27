@@ -151,7 +151,36 @@
         </div>
     </div>
     </div>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-5 right-5 bg-red-500 text-white p-3 rounded-full hidden">
+        Back To Top &uarr;
+    </button>
 
+    <script>
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back-to-Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 <!-- Footer -->
 <footer class="bg-white">
